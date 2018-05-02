@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.min.css">
+  <link rel="stylesheet" href="modals.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Tic Tac Toe</h1>
+    <div class="content">
+      <div id="0" class="div1 play-area"></div>
+      <div class="div2 play-area"></div>
+      <div class="div3 play-area"></div>
+      <div class="div4 play-area"></div>
+      <div class="div5 play-area"></div>
+      <div class="div6 play-area"></div>
+      <div class="div7 play-area"></div>
+      <div class="div8 play-area"></div>
+      <div class="div9 play-area"></div>
+    </div>
+    <div class="buttons">
+      <button id="startGameBtn" class="startGame">Start</button>
+      <button id="resetGameBtn">Reset</button>
+    </div>
+    <p id=sig>Design and code by Justin Joyce</p>
+
+    <div id="startGameModal" class="startGameModal">
+      <div class="modal-content">
+        <p>Choose either X or O</p>
+        <button id="modalX">X</button>
+        <button id="modalO">O</button>
+      </div>
+    </div>
+    <div id="endGameModal" class="messageModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p id="closeBtn">&times;</p>
+        </div>
+        <div class="modal-body">
+          <p id="message"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.min.js"></script>
+</body>
+
+</html>
