@@ -18,13 +18,8 @@ body {
 
 body {
   line-height: 150%;
-  background-attachment: fixed;
-  background: #551f70; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #fdffa7,
-    #551f70
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: #551f70;
+  background: -webkit-linear-gradient(to top, #fdffa7, #551f70);
   background: -webkit-gradient(
     linear,
     left bottom,
@@ -35,7 +30,7 @@ body {
   background: -webkit-linear-gradient(bottom, #fdffa7, #551f70);
   background: -o-linear-gradient(bottom, #fdffa7, #551f70);
   background: linear-gradient(to top, #fdffa7, #551f70);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-attachment: fixed;
 }
 h1 {
   margin: 1em;
@@ -121,10 +116,10 @@ h1 {
   border-right: 6px solid rgba(85, 31, 112, 0.7);
   border-top: 6px solid rgba(85, 31, 112, 0.7);
 }
-
 .content .div8 {
   border-top: 6px solid rgba(85, 31, 112, 0.7);
 }
+
 .content .div9 {
   border-top: 6px solid rgba(85, 31, 112, 0.7);
   border-left: 6px solid rgba(85, 31, 112, 0.7);
