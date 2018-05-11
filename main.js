@@ -1,3 +1,5 @@
+"use strict";
+
 const startModal = document.getElementById("startGameModal");
 const endModal = document.getElementById("endGameModal");
 const message = document.getElementById("message");
@@ -26,7 +28,7 @@ let gameWin = [
 ];
 
 // Resets all variables to start game again.
-let reset = () => {
+const reset = () => {
   playArea.forEach((val, i) => playArea[i].innerHTML = "");
   player = "";
   board = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -44,28 +46,28 @@ let reset = () => {
 };
 
 // MODAL FUNCTIONS
-let startGameModal = () => {
+const startGameModal = () => {
   startModal.style.display = "block";
 };
 
-let endGameModal = str => {
+const endGameModal = str => {
   endModal.style.display = "block";
   message.innerText = str;
 };
 
-let choseX = () => {
+const choseX = () => {
   reset();
   player = x;
   startModal.style.display = "none";
 };
 
-let choseO = () => {
+const choseO = () => {
   reset();
   player = o;
   startModal.style.display = "none";
 };
 
-let clickOutside = e => {
+const clickOutside = e => {
   if (e.target == startModal) {
     startModal.style.display = "none";
   } else if (e.target == endModal) {
@@ -73,7 +75,7 @@ let clickOutside = e => {
   }
 };
 
-let closeModal = () => {
+const closeModal = () => {
   endModal.style.display = "none";
 };
 
@@ -85,8 +87,9 @@ modalO.addEventListener("click", choseO);
 window.addEventListener("click", clickOutside);
 closeBtn.addEventListener("click", closeModal);
 
+
 // GAME FUNCTIONS
-let playGame = () => {
+const playGame = () => {
   playArea.forEach((val, i) => {
     playArea[i].addEventListener("click", function() {
       // PLAYER TURN
@@ -126,10 +129,10 @@ let playGame = () => {
 };
 
 
-let checkTurnWin = () => {
+const checkTurnWin = () => {
   // Check if an array in gameWin has an X or O then check if they have all X's or all O's. Return true if so.
-  let checkWinX = gameWin.some((val, i) => gameWin[i].every((val) => val === "X"));
-  let checkWinO = gameWin.some((val, i) => gameWin[i].every((val) => val === "O"));
+  const checkWinX = gameWin.some((val, i) => gameWin[i].every((val) => val === "X"));
+  const checkWinO = gameWin.some((val, i) => gameWin[i].every((val) => val === "O"));
 
   if (
     (checkWinO === true && player == o) ||
@@ -142,7 +145,7 @@ let checkTurnWin = () => {
     reset();
   } else {
     // Array filtering to X or O and then counting how many to check for draw
-    let checkDraw = board.filter((val) => val === "X" || val === "O");
+    const checkDraw = board.filter((val) => val === "X" || val === "O");
     if (checkDraw.length === 9) {
       endGameModal("Draw!");
       reset();
@@ -151,7 +154,7 @@ let checkTurnWin = () => {
 };
 
 // Loop through 2D win condition array and replace int's with X or O.
-let alterGameWin = (num, str) => {
+const alterGameWin = (num, str) => {
   gameWin.forEach((val, i) => {
     val.map((val, j) => {
       if (gameWin[i][j] == num) {
